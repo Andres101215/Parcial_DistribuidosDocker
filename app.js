@@ -21,6 +21,7 @@ app.get('/', async (req, res) => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
     res.render('index', { posts: response.data, selectedPost: null });
   } catch (error) {
+    console.error('Error al obtener los posts:', error.message);
     res.status(500).send('Error al obtener los posts');
   }
 });
