@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Posts de JSONPlaceholder</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .post { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+    .selected { background-color: #f0f8ff; }
+  </style>
+</head>
+<body>
+  <h1>Listado de Posts</h1>
+
+  <form action="/post" method="POST">
+    <label for="postId">Buscar post por ID:</label>
+    <input type="number" name="postId" id="postId" min="1" required>
+    <button type="submit">Buscar</button>
+  </form>
+
+  <% if (selectedPost) { %>
+    <h2>Post Encontrado</h2>
+    <div class="post selected">
+      <p><strong>ID:</strong> <%= selectedPost.id %></p>
+      <p><strong>Título:</strong> <%= selectedPost.title %></p>
+      <p><strong>Contenido:</strong> <%= selectedPost.body %></p>
+    </div>
+  <% } %>
+
+  <h2>Todos los Posts</h2>
+  <% posts.forEach(post => { %>
+    <div class="post">
+      <p><strong><%= post.id %>: </strong> <%= post.title %></p>
+    </div>
+  <% }) %>
+</body>
+</html>
