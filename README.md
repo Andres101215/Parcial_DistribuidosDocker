@@ -21,6 +21,6 @@ IMPORTANTE :se debe tener ya instalado docker desktop para poder realizar los si
 
 3.Si se ejecuta correctamente mostrara un mensaje de :
 
-Servidor escuchando en http://0.0.0.0:3000
+Servidor escuchando en http://localhost:3000
 
 4.Si muestra este mensaje corractamente solo queda abrir el link en el navegador y probar la funcionalidad al filtrar por id 
